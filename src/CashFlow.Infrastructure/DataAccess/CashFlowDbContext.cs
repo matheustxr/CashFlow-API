@@ -5,7 +5,7 @@ namespace CashFlow.Infrastructure.DataAccess;
 
 internal class CashFlowDbContext : DbContext
 {
-    public DbSet<Expense> Expenses { get; set; }
+    public DbSet<Expense> Expenses { get; set; } //aqui eu seto uma tabela que desejo usar dentro do meu db
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
