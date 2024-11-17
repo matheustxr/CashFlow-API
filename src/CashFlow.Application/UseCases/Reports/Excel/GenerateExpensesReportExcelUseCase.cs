@@ -22,7 +22,7 @@ public class GenerateExpensesReportExcelUseCase : IGenerateExpensesReportExcelUs
             return [];
         }
 
-        var workbook = new XLWorkbook();
+        using var workbook = new XLWorkbook();
 
         workbook.Author = "Matheus Teixeira";
         workbook.Style.Font.FontSize = 12;
