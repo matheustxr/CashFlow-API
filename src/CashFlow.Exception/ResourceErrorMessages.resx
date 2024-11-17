@@ -123,6 +123,9 @@
   <data name="DATE_MUST_TODAY" xml:space="preserve">
     <value>The date must be previos today</value>
   </data>
+  <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
+    <value>Expense not found</value>
+  </data>
   <data name="PAYMENT_TYPE_INVALID" xml:space="preserve">
     <value>Payment Type is not valid</value>
   </data>
