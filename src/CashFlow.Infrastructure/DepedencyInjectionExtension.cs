@@ -19,7 +19,8 @@ public static class DepedencyInjectionExtension
     private static void AddRepositories(IServiceCollection services) //aqui são as injeções de dependências e as interfaces que elas devem ter que é 
     {
         services.AddScoped<IUnityOfWork, UnityOfWork>();
-        services.AddScoped<IExpensesRepository, ExpensesRepository>();
+        services.AddScoped<IExpensesReadOnlyRepository, ExpensesRepository>();
+        services.AddScoped<IExpensesWriteOnlyRepository, ExpensesRepository>();
     }
 
     private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
