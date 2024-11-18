@@ -15,6 +15,7 @@ public class ExpensesReportFontResolver : IFontResolver
         var data = new byte[length];
 
         stream.Read(buffer: data, offset: 0, count: length);
+
         return data;
     }
     public FontResolverInfo? ResolveTypeface(string familyName, bool bold, bool italic)
