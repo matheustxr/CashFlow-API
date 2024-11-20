@@ -2,6 +2,8 @@
 using CashFlow.API.Controllers;
 using CashFlow.Communication.Requests;
 using CashFlow.Communication.Responses;
+using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.User;
 using CashFlow.Domain.Security.Cryptography;
 
 namespace CashFlow.Application.UseCases.Users.Register;
@@ -9,11 +11,22 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 {
     private readonly IMapper _mapper;
     private readonly IPasswordEncripter _passwordEncripter;
+    private readonly IUserReadOnlyRepository _userReadOnlyRepository;
+    private readonly IUserWriteOnlyRepository _userWriteOnlyRepository;
+    private readonly IUnityOfWork _unityOfWork;
 
-    public RegisterUserUseCase(IMapper mapper, IPasswordEncripter passwordEncripter)
+    public RegisterUserUseCase(
+        IMapper mapper,
+        IPasswordEncripter passwordEncripter,
+        IUserReadOnlyRepository userReadOnlyRepository,
+        IUserWriteOnlyRepository userWriteOnlyRepository,
+        IUnityOfWork unitOfWork)
     {
         _mapper = mapper;
         _passwordEncripter = passwordEncripter;
+        _userReadOnlyRepository = userReadOnlyRepository;
+        _userWriteOnlyRepository = userWriteOnlyRepository;
+        _unityOfWork = unitOfWork;
     }
 
     public async Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson request)
@@ -22,6 +35,11 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
         var user = _mapper.Map<Domain.Entities.User>(request);
         user.Password = _passwordEncripter.Encrypt(request.Password);
+        user.UserIdentifier = Guid.NewGuid();
+
+        await _userWriteOnlyRepository.Add(user);
+
+        await _unityOfWork.Commit();
 
         return new ResponseRegisteredUserJson
         {
