@@ -10,7 +10,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     private readonly IMapper _mapper;
     private readonly IPasswordEncripter _passwordEncripter;
 
-    public RegisterUserUseCase(IMapper mapper)
+    public RegisterUserUseCase(IMapper mapper, IPasswordEncripter passwordEncripter)
     {
         _mapper = mapper;
         _passwordEncripter = passwordEncripter;
