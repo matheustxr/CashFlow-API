@@ -1,5 +1,6 @@
 ﻿using CashFlow.Domain.Repositories;
 using CashFlow.Domain.Repositories.Expenses;
+using CashFlow.Domain.Security.Cryptography;
 using CashFlow.Infrastructure.DataAccess;
 using CashFlow.Infrastructure.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ public static class DepedencyInjectionExtension
     {
         AddDbContext(services, configuration);
         AddRepositories(services);
+
+        services.AddScoped<IPasswordEncripter, Security.BCrypt>();
     }
 
     private static void AddRepositories(IServiceCollection services) //aqui são as injeções de dependências e as interfaces que elas devem ter que é 
