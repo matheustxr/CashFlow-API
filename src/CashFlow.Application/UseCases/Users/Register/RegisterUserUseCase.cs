@@ -5,6 +5,7 @@ using CashFlow.Communication.Responses;
 using CashFlow.Domain.Repositories;
 using CashFlow.Domain.Repositories.User;
 using CashFlow.Domain.Security.Cryptography;
+using CashFlow.Domain.Security.Tokens;
 
 namespace CashFlow.Application.UseCases.Users.Register;
 public class RegisterUserUseCase : IRegisterUserUseCase
@@ -13,6 +14,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     private readonly IPasswordEncripter _passwordEncripter;
     private readonly IUserReadOnlyRepository _userReadOnlyRepository;
     private readonly IUserWriteOnlyRepository _userWriteOnlyRepository;
+    private readonly IAccessTokenGenerator _tokenGenerator;
     private readonly IUnityOfWork _unityOfWork;
 
     public RegisterUserUseCase(
@@ -20,12 +22,14 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         IPasswordEncripter passwordEncripter,
         IUserReadOnlyRepository userReadOnlyRepository,
         IUserWriteOnlyRepository userWriteOnlyRepository,
+        IAccessTokenGenerator tokenGenerator,
         IUnityOfWork unitOfWork)
     {
         _mapper = mapper;
         _passwordEncripter = passwordEncripter;
         _userReadOnlyRepository = userReadOnlyRepository;
         _userWriteOnlyRepository = userWriteOnlyRepository;
+        _tokenGenerator = tokenGenerator;
         _unityOfWork = unitOfWork;
     }
 
@@ -44,6 +48,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
         return new ResponseRegisteredUserJson
         {
             Name = user.Name,
+            Token = _tokenGenerator.Generate(user)
         };
     }
 
