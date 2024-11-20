@@ -28,14 +28,17 @@ internal class JwtTokenGenerator : IAccessTokenGenerator
             SigningCredentials = new SigningCredentials(SecurityKey(), SecurityAlgorithms.HmacSha256Signature),
             Subject = new ClaimsIdentity(claims)
         };
+
         var tokenHandler = new JwtSecurityTokenHandler();
 
         var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+
         return tokenHandler.WriteToken(securityToken);
     }
     private SymmetricSecurityKey SecurityKey()
     {
         var key = Encoding.UTF8.GetBytes(_signingKey);
+
         return new SymmetricSecurityKey(key);
     }
 }
