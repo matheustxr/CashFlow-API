@@ -67,6 +67,7 @@ public class GenerateExpensesReportPdfUseCase : IGenerateExpensesReportPdfUseCas
 
             AddAmountForExpense(row.Cells[3], expense.Amount);
 
+            //ADD DESCRIPTION EXPENSE
             if (string.IsNullOrWhiteSpace(expense.Description) == false)
             {
                 var descriptionRow = table.AddRow();
@@ -145,7 +146,7 @@ public class GenerateExpensesReportPdfUseCase : IGenerateExpensesReportPdfUseCas
 
         paragraph.AddLineBreak();
 
-        paragraph.AddFormattedText($"{totalExpenses} {CURRENCY_SYMBOL}", new Font { Name = FontHelper.WORKSANS_BLACK, Size = 50 });
+        paragraph.AddFormattedText($"{CURRENCY_SYMBOL} {totalExpenses}", new Font { Name = FontHelper.WORKSANS_BLACK, Size = 50 });
     }
 
     private Table CreateExpenseTable(Section page)
