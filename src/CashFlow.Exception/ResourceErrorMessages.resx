@@ -123,6 +123,9 @@
   <data name="DATE_MUST_TODAY" xml:space="preserve">
     <value>The date must be previos today</value>
   </data>
+  <data name="EMAIL_ALREADY_REGISTERED" xml:space="preserve">
+    <value>E-mail already exists</value>
+  </data>
   <data name="EMAIL_EMPTY" xml:space="preserve">
     <value>The email cannot be empty.</value>
   </data>
