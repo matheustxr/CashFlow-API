@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashFlow.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validators.Tests", "tests\Validators.Tests\Validators.Tests.csproj", "{6FB58FFB-A4F3-4AAD-8CDD-BF47D1926BF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTestUnilities", "tests\CommonTestUnilities\CommonTestUnilities.csproj", "{20F27A72-DCD0-4883-B8DE-6CBECE2113FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonTestUnilities", "tests\CommonTestUnilities\CommonTestUnilities.csproj", "{20F27A72-DCD0-4883-B8DE-6CBECE2113FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCases.Test", "tests\UseCases.Test\UseCases.Test.csproj", "{CB66BAAB-FC74-4B3A-9137-B721D94BDB28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{20F27A72-DCD0-4883-B8DE-6CBECE2113FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F27A72-DCD0-4883-B8DE-6CBECE2113FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20F27A72-DCD0-4883-B8DE-6CBECE2113FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB66BAAB-FC74-4B3A-9137-B721D94BDB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB66BAAB-FC74-4B3A-9137-B721D94BDB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB66BAAB-FC74-4B3A-9137-B721D94BDB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB66BAAB-FC74-4B3A-9137-B721D94BDB28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{94CF498C-5829-472D-B477-052717B9AD75} = {88362240-C5D8-4D6F-AD7E-018D97EDC0D8}
 		{6FB58FFB-A4F3-4AAD-8CDD-BF47D1926BF5} = {F1CE8505-65D6-44D8-B9C5-1CB8883353A9}
 		{20F27A72-DCD0-4883-B8DE-6CBECE2113FA} = {F1CE8505-65D6-44D8-B9C5-1CB8883353A9}
+		{CB66BAAB-FC74-4B3A-9137-B721D94BDB28} = {F1CE8505-65D6-44D8-B9C5-1CB8883353A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0211DD5C-7B16-44A2-918B-525624CA6647}
