@@ -36,6 +36,7 @@ public class DeleteExpenseUseCase : IDeleteExpenseUseCase
         }
 
         await _repository.Delete(id);
-        await _unitOfWork.Commit();
+
+        await _unityOfWork.Commit();
     }
 }

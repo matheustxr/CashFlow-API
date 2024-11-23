@@ -10,10 +10,7 @@ public class GetAllExpenseUseCase : IGetAllExpenseUseCase
     private readonly IMapper _mapper;
     private readonly ILoggedUser _loggedUser;
 
-    public GetAllExpenseUseCase(
-        IExpensesReadOnlyRepository repository, 
-        IMapper mapper, 
-        ILoggedUser loggedUser)
+    public GetAllExpenseUseCase(IExpensesReadOnlyRepository repository, IMapper mapper, ILoggedUser loggedUser)
     {
         _repository = repository;
         _mapper = mapper;
