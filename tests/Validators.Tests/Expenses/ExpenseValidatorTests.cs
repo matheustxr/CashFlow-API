@@ -4,9 +4,9 @@ using CashFlow.Exception;
 using CommonTestUnilities.Requests;
 using FluentAssertions;
 
-namespace Validators.Tests.Expenses.Register;
+namespace Validators.Tests.Expenses;
 
-public class RegisterExpenseValidatorTests
+public class ExpenseValidatorTests
 {
     [Fact]
     public void Sucess()
