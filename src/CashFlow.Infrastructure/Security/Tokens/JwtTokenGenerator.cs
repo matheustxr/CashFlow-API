@@ -20,8 +20,10 @@ internal class JwtTokenGenerator : IAccessTokenGenerator
         var claims = new List<Claim>()
         {
             new Claim(ClaimTypes.Name, user.Name),
-            new Claim(ClaimTypes.Sid, user.UserIdentifier.ToString())
+            new Claim(ClaimTypes.Sid, user.UserIdentifier.ToString()),
+            new Claim(ClaimTypes.Role, user.Role)
         };
+
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Expires = DateTime.UtcNow.AddMinutes(_expirationTimeMinutes),
