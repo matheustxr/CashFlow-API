@@ -12,6 +12,6 @@ public class CashFlowDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        //modelBuilder.Entity<Tag>().ToTable("Tags");
+        modelBuilder.Entity<Tag>().ToTable("Tags");
     }
 }
