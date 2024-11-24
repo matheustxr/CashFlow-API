@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
 //CONFIGURAÇÃO PARA ADICIONAR O BOTÃO PARA COLOCAR O TOKEN NO SWAGGERR
 builder.Services.AddSwaggerGen(config =>
 {
