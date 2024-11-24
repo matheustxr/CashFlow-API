@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace WebApi.Test;
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
+    private Expense _expense;
     private User _user;
     private string _password;
     private string _token;
@@ -46,6 +47,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     public string GetEmail() => _user.Email;
     public string GetPassword() => _password;
     public string GetToken() => _token;
+    public long GetExpenseId() => _expense.Id;
 
     //configuração para sempre inicar o bd com um usuario
     private void StartDatabase(CashFlowDbContext dbContext, IPasswordEncripter passwordEncripter)
@@ -68,7 +70,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
     private void AddExpenses(CashFlowDbContext dbContext, User user)
     {
-        var expense = ExpenseBuilder.Build(user);
-        dbContext.Expenses.Add(expense);
+        _expense = ExpenseBuilder.Build(user);
+
+        dbContext.Expenses.Add(_expense);
     }
 }
