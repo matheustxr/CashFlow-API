@@ -4,6 +4,7 @@ using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Domain.Services.LoggedUser;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionsBase;
+
 namespace CashFlow.Application.UseCases.Expenses.GetById;
 public class GetExpenseByIdUseCase : IGetExpenseByIdUseCase
 {
@@ -11,10 +12,7 @@ public class GetExpenseByIdUseCase : IGetExpenseByIdUseCase
     private readonly IMapper _mapper;
     private readonly ILoggedUser _loggedUser;
 
-    public GetExpenseByIdUseCase(
-        IExpensesReadOnlyRepository repository, 
-        IMapper mapper, 
-        ILoggedUser loggedUser)
+    public GetExpenseByIdUseCase( IExpensesReadOnlyRepository repository, IMapper mapper, ILoggedUser loggedUser)
     {
         _repository = repository;
         _mapper = mapper;

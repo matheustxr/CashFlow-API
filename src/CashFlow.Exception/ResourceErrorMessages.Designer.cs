@@ -124,6 +124,15 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Expenses cannot be for the future.
+        /// </summary>
+        public static string EXPENSES_CANNOT_FOR_THE_FUTURE {
+            get {
+                return ResourceManager.GetString("EXPENSES_CANNOT_FOR_THE_FUTURE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Your password should be a minimum of 8 characters, containing at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., !, ?, *, .)..
         /// </summary>
         public static string INVALID_PASSWORD {
@@ -142,11 +151,29 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The password entered is different from the current password..
+        /// </summary>
+        public static string PASSWORD_DIFFERENT_CURRENT_PASSWORD {
+            get {
+                return ResourceManager.GetString("PASSWORD_DIFFERENT_CURRENT_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Payment Type is not valid.
         /// </summary>
         public static string PAYMENT_TYPE_INVALID {
             get {
                 return ResourceManager.GetString("PAYMENT_TYPE_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unsupported tag..
+        /// </summary>
+        public static string TAG_TYPE_NOT_SUPPORTED {
+            get {
+                return ResourceManager.GetString("TAG_TYPE_NOT_SUPPORTED", resourceCulture);
             }
         }
         

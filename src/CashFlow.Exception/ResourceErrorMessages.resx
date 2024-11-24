@@ -135,6 +135,9 @@
   <data name="EMAIL_OR_PASSWORD_INVALID" xml:space="preserve">
     <value>Invalid e-mail and/or password.</value>
   </data>
+  <data name="EXPENSES_CANNOT_FOR_THE_FUTURE" xml:space="preserve">
+    <value>Expenses cannot be for the future</value>
+  </data>
   <data name="EXPENSE_NOT_FOUND" xml:space="preserve">
     <value>Expense not found</value>
   </data>
@@ -144,8 +147,14 @@
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>The name cannot be empty.</value>
   </data>
+  <data name="PASSWORD_DIFFERENT_CURRENT_PASSWORD" xml:space="preserve">
+    <value>The password entered is different from the current password.</value>
+  </data>
   <data name="PAYMENT_TYPE_INVALID" xml:space="preserve">
     <value>Payment Type is not valid</value>
+  </data>
+  <data name="TAG_TYPE_NOT_SUPPORTED" xml:space="preserve">
+    <value>Unsupported tag.</value>
   </data>
   <data name="TITLE_REQUIRED" xml:space="preserve">
     <value>The title is required</value>
