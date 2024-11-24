@@ -75,7 +75,9 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
         dbContext.Users.Add(user);
 
         var token = accessTokenGenerator.Generate(user);
+
         User_Team_Member = new UserIdentityManager(user, password, token);
+
         return user;
     }
 
