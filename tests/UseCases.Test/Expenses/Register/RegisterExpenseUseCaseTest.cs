@@ -16,7 +16,7 @@ public class RegisterExpenseUseCaseTest
     {
         var loggedUser = UserBuilder.Build();
 
-        var request = RequestRegisterExpenseJsonBuilder.Build();
+        var request = RequestExpenseJsonBuilder.Build();
 
         var useCase = CreateUseCase(loggedUser);
 
@@ -31,7 +31,7 @@ public class RegisterExpenseUseCaseTest
     {
         var loggedUser = UserBuilder.Build();
 
-        var request = RequestRegisterExpenseJsonBuilder.Build();
+        var request = RequestExpenseJsonBuilder.Build();
 
         request.Title = string.Empty;
 
