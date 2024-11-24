@@ -11,17 +11,16 @@ namespace WebApi.Test.Login.DoLogin;
 public class DoLoginTest : CashFlowClassFixture
 {
     private const string METHOD = "api/Login";
-    private readonly HttpClient _httpClient;
+
     private readonly string _email;
     private readonly string _name;
     private readonly string _password;
 
     public DoLoginTest(CustomWebApplicationFactory webApplicationFactory) : base(webApplicationFactory)
     {
-        _httpClient = webApplicationFactory.CreateClient();
-        _email = webApplicationFactory.GetEmail();
-        _name = webApplicationFactory.GetName();
-        _password = webApplicationFactory.GetPassword();
+        _email = webApplicationFactory.User_Team_Member.GetEmail();
+        _name = webApplicationFactory.User_Team_Member.GetName();
+        _password = webApplicationFactory.User_Team_Member.GetPassword();
     }
 
     [Fact]
