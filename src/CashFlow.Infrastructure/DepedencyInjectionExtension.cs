@@ -57,6 +57,6 @@ public static class DepedencyInjectionExtension
 
         var serverVersion = ServerVersion.AutoDetect(connectionString);
 
-        services.AddDbContext<CashFlowDbContext>(config => config.UseMySql(connectionString, serverVersion));
+        services.AddDbContext<CashFlowDbContext>(config => config.UseMySql(connectionString, serverVersion)); 
     }
 }
